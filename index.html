@@ -1031,6 +1031,32 @@
             to { opacity: 1; }
         }
 
+        @keyframes coupleAnimation {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+            }
+            25% {
+                transform: scale(1.1) rotate(-5deg);
+            }
+            50% {
+                transform: scale(1.15) rotate(0deg);
+            }
+            75% {
+                transform: scale(1.1) rotate(5deg);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .envelope-container {
@@ -1091,6 +1117,10 @@
 
             .birthday-title {
                 font-size: 2.8em;
+            }
+
+            .birthday-header {
+                padding: 0 10px;
             }
         }
     </style>
@@ -1214,10 +1244,197 @@
             </div>
         </div>
 
-        <div style="text-align: center; padding: 100px 20px; color: #ffd700; font-size: 2em;">
-            <p>🎊 More beautiful surprises coming... 💕</p>
-            <p style="margin-top: 30px; font-size: 1.5em;">This is just the beginning of your special day! 🎂✨</p>
+        <!-- Love Card -->
+        <div style="background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); border-radius: 30px; padding: 60px 50px; box-shadow: 0 20px 60px rgba(0,0,0,0.8); animation: slideUp 1.8s ease-out; position: relative; overflow: hidden; margin-bottom: 40px; border: 2px solid rgba(255, 215, 0, 0.3);">
+            <div style="position: relative; z-index: 1;">
+                <div style="text-align: center; margin: 40px 0;">
+                    <div style="font-size: 120px; animation: coupleAnimation 3s infinite; display: inline-block; filter: drop-shadow(0 0 20px rgba(255, 107, 157, 0.8));">👩‍❤️‍👨</div>
+                    <div style="font-size: 3em; background: linear-gradient(135deg, #ffd700 0%, #ff6b9d 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold; margin: 20px 0; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));">Asma 💕 Ali</div>
+                    <div style="font-size: 1.8em; color: #a29bfe; font-style: italic; text-shadow: 0 0 15px rgba(162, 155, 254, 0.6);">Forever & Always Together 💑✨</div>
+                </div>
+                
+                <div style="font-size: 1.4em; line-height: 2; color: #e0e0e0; text-align: center; margin: 30px 0;">
+                    <p style="margin-bottom: 25px;">My Dearest Ali, My Soulmate, My Love 💑</p>
+                    <p style="margin-bottom: 25px;">On this magical day, I celebrate not just your birthday, but the incredible <span style="color: #ffd700; font-weight: bold; font-size: 1.1em; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);">blessing</span> of having you in my life! 🎊 From the moment we met, you've filled every day with endless love, joy, laughter, and the kind of happiness I never knew existed.</p>
+                    <p style="margin-bottom: 25px;">Happy Birthday to my <span style="color: #ffd700; font-weight: bold; font-size: 1.1em; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);">soulmate</span> 💖, my best friend 🤗, my rock 💪, my partner in everything 🤝, and the one who makes my heart skip a beat every single day! 👫</p>
+                    <p style="margin-bottom: 25px;">Every moment with you is a precious gift. Whether we're laughing together, supporting each other through challenges, or just enjoying quiet moments, you make everything better. Your <span style="color: #ffd700; font-weight: bold; font-size: 1.1em; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);">kindness, strength, and beautiful soul</span> inspire me every single day! 🌟</p>
+                    <p style="margin-bottom: 25px;">I love you more than the stars in the sky, deeper than the ocean, and stronger with each passing day! Today, tomorrow, and forever! 💫🌙✨</p>
+                </div>
+            </div>
         </div>
+
+        <!-- Our Journey Timeline -->
+        <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); border-radius: 30px; padding: 60px 50px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.8); animation: slideUp 2.1s ease-out; border: 2px solid rgba(255, 215, 0, 0.3);">
+            <h2 style="text-align: center; font-size: 2.8em; color: #ffd700; margin-bottom: 50px; text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); font-weight: bold;">Our Beautiful Journey Together 💕</h2>
+            <div style="position: relative; padding: 30px 0;">
+                <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #ffd700 0%, #ff6b9d 50%, #a29bfe 100%); transform: translateX(-50%); box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);"></div>
+                
+                <div style="position: relative; margin-bottom: 60px;">
+                    <div style="position: absolute; left: 50%; top: 0; width: 30px; height: 30px; background: linear-gradient(135deg, #ffd700 0%, #ff6b9d 100%); border-radius: 50%; transform: translateX(-50%); border: 4px solid #1a1a2e; box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); z-index: 2;"></div>
+                    <div style="width: 45%; background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.3);">
+                        <div style="font-size: 2.5em; margin-bottom: 10px;">💘</div>
+                        <div style="font-size: 1.1em; color: #ffd700; font-weight: bold; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">The Beginning</div>
+                        <div style="font-size: 1.2em; color: #e0e0e0; line-height: 1.6;">When our eyes first met and my heart knew you were the one. That magical moment when two souls recognized each other across time and space. 💫</div>
+                    </div>
+                </div>
+
+                <div style="position: relative; margin-bottom: 60px;">
+                    <div style="position: absolute; left: 50%; top: 0; width: 30px; height: 30px; background: linear-gradient(135deg, #ffd700 0%, #ff6b9d 100%); border-radius: 50%; transform: translateX(-50%); border: 4px solid #1a1a2e; box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); z-index: 2;"></div>
+                    <div style="margin-left: 55%; width: 45%; background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.3);">
+                        <div style="font-size: 2.5em; margin-bottom: 10px;">💑</div>
+                        <div style="font-size: 1.1em; color: #ffd700; font-weight: bold; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">Our First Date</div>
+                        <div style="font-size: 1.2em; color: #e0e0e0; line-height: 1.6;">Nervous butterflies, endless conversations, and realizing I never wanted that day to end. You made me laugh, feel comfortable, and showed me what true connection feels like. 🌹</div>
+                    </div>
+                </div>
+
+                <div style="position: relative; margin-bottom: 60px;">
+                    <div style="position: absolute; left: 50%; top: 0; width: 30px; height: 30px; background: linear-gradient(135deg, #ffd700 0%, #ff6b9d 100%); border-radius: 50%; transform: translateX(-50%); border: 4px solid #1a1a2e; box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); z-index: 2;"></div>
+                    <div style="width: 45%; background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.3);">
+                        <div style="font-size: 2.5em; margin-bottom: 10px;">💍</div>
+                        <div style="font-size: 1.1em; color: #ffd700; font-weight: bold; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">You Proposed</div>
+                        <div style="font-size: 1.2em; color: #e0e0e0; line-height: 1.6;">The happiest "YES!" of my life! When you got down on one knee, time stood still. My dreams were coming true, and I knew forever with you would be the greatest adventure. ✨</div>
+                    </div>
+                </div>
+
+                <div style="position: relative; margin-bottom: 60px;">
+                    <div style="position: absolute; left: 50%; top: 0; width: 30px; height: 30px; background: linear-gradient(135deg, #ffd700 0%, #ff6b9d 100%); border-radius: 50%; transform: translateX(-50%); border: 4px solid #1a1a2e; box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); z-index: 2;"></div>
+                    <div style="margin-left: 55%; width: 45%; background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.3);">
+                        <div style="font-size: 2.5em; margin-bottom: 10px;">👰‍♀️🤵‍♂️</div>
+                        <div style="font-size: 1.1em; color: #ffd700; font-weight: bold; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">Our Wedding Day</div>
+                        <div style="font-size: 1.2em; color: #e0e0e0; line-height: 1.6;">The most beautiful day of my life! Surrounded by love, we vowed to be together forever. Every promise we made that day, I cherish and honor with all my heart. 💒</div>
+                    </div>
+                </div>
+
+                <div style="position: relative;">
+                    <div style="position: absolute; left: 50%; top: 0; width: 30px; height: 30px; background: linear-gradient(135deg, #ffd700 0%, #ff6b9d 100%); border-radius: 50%; transform: translateX(-50%); border: 4px solid #1a1a2e; box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); z-index: 2;"></div>
+                    <div style="width: 45%; background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.3);">
+                        <div style="font-size: 2.5em; margin-bottom: 10px;">♾️</div>
+                        <div style="font-size: 1.1em; color: #ffd700; font-weight: bold; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">Every Day Since</div>
+                        <div style="font-size: 1.2em; color: #e0e0e0; line-height: 1.6;">Each day with you is a new chapter in our love story. Through ups and downs, laughter and tears, we grow stronger together. Here's to a lifetime of love, adventures, and happiness! 🌈</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Special Memories -->
+        <div style="background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); border-radius: 30px; padding: 60px 50px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.8); animation: slideUp 2.4s ease-out; border: 2px solid rgba(255, 215, 0, 0.3);">
+            <h2 style="text-align: center; font-size: 2.8em; color: #ffd700; margin-bottom: 40px; text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); font-weight: bold;">Our Precious Memories 📸✨</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 40px 30px; border-radius: 20px; text-align: center; border: 2px solid rgba(255, 215, 0, 0.2); transition: all 0.4s;">
+                    <div style="font-size: 4em; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));">🌙</div>
+                    <div style="font-size: 1.6em; color: #ffd700; font-weight: bold; margin-bottom: 15px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">Late Night Talks</div>
+                    <div style="font-size: 1.2em; color: #e0e0e0; line-height: 1.7;">Those endless conversations under the stars, where we share our dreams, fears, and everything in between. Your voice is my favorite sound in the world. 💭</div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 40px 30px; border-radius: 20px; text-align: center; border: 2px solid rgba(255, 215, 0, 0.2);">
+                    <div style="font-size: 4em; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));">🍽️</div>
+                    <div style="font-size: 1.6em; color: #ffd700; font-weight: bold; margin-bottom: 15px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">Cooking Together</div>
+                    <div style="font-size: 1.2em; color: #e0e0e0; line-height: 1.7;">The kitchen chaos, flour fights, and burnt attempts that always end in laughter. Every meal we cook together tastes like love! 👨‍🍳👩‍🍳</div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 40px 30px; border-radius: 20px; text-align: center; border: 2px solid rgba(255, 215, 0, 0.2);">
+                    <div style="font-size: 4em; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));">🎬</div>
+                    <div style="font-size: 1.6em; color: #ffd700; font-weight: bold; margin-bottom: 15px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">Movie Nights</div>
+                    <div style="font-size: 1.2em; color: #e0e0e0; line-height: 1.7;">Cuddled on the couch, watching movies (or sometimes falling asleep), these cozy moments are my favorite. Your arms are my home. 🛋️</div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 40px 30px; border-radius: 20px; text-align: center; border: 2px solid rgba(255, 215, 0, 0.2);">
+                    <div style="font-size: 4em; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));">✈️</div>
+                    <div style="font-size: 1.6em; color: #ffd700; font-weight: bold; margin-bottom: 15px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">Adventures Together</div>
+                    <div style="font-size: 1.2em; color: #e0e0e0; line-height: 1.7;">Every trip, every new place we explore becomes special because I'm with you. The world is more beautiful when I see it through your eyes. 🗺️</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Birthday Wishes -->
+        <div style="background: linear-gradient(135deg, #0f3460 0%, #16213e 100%); border-radius: 30px; padding: 60px 50px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.8); animation: slideUp 2.7s ease-out; border: 2px solid rgba(255, 215, 0, 0.3);">
+            <h2 style="text-align: center; font-size: 2.8em; color: #ffd700; margin-bottom: 40px; text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); font-weight: bold;">My Heartfelt Birthday Wishes For You! 🎁💕</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div style="background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 35px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.2);">
+                    <div style="font-size: 3.5em; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));">🌟</div>
+                    <div style="font-size: 1.3em; color: #e0e0e0; font-weight: 600; line-height: 1.7;">May all your dreams and aspirations shine bright and come true this year! Every goal you chase, may you achieve with flying colors!</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 35px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.2);">
+                    <div style="font-size: 3.5em; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));">💪</div>
+                    <div style="font-size: 1.3em; color: #e0e0e0; font-weight: 600; line-height: 1.7;">Wishing you incredible strength, perfect health, and boundless energy for all your adventures and challenges ahead!</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 35px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.2);">
+                    <div style="font-size: 3.5em; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));">🎯</div>
+                    <div style="font-size: 1.3em; color: #e0e0e0; font-weight: 600; line-height: 1.7;">May you conquer every goal, reach new heights of success, and exceed even your wildest expectations this year!</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 35px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.2);">
+                    <div style="font-size: 3.5em; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));">😊</div>
+                    <div style="font-size: 1.3em; color: #e0e0e0; font-weight: 600; line-height: 1.7;">Here's to 365 days filled with endless smiles, contagious laughter, pure joy, and moments that take your breath away!</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 35px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.2);">
+                    <div style="font-size: 3.5em; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));">🚀</div>
+                    <div style="font-size: 1.3em; color: #e0e0e0; font-weight: 600; line-height: 1.7;">May success and prosperity follow you in every step you take! May opportunities knock on your door and blessings flow abundantly!</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 35px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.2);">
+                    <div style="font-size: 3.5em; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));">❤️</div>
+                    <div style="font-size: 1.3em; color: #e0e0e0; font-weight: 600; line-height: 1.7;">Wishing you a year overflowing with love, inner peace, countless blessings, and everything your beautiful heart desires!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why I Love You -->
+        <div style="background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); border-radius: 30px; padding: 60px 50px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.8); animation: slideUp 3s ease-out; border: 2px solid rgba(255, 215, 0, 0.3);">
+            <h2 style="text-align: center; font-size: 2.8em; color: #ffd700; margin-bottom: 40px; text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); font-weight: bold;">Why You're My Everything! 💖</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); padding: 30px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3em; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));">😍</div>
+                    <div style="font-size: 1.2em; font-weight: 600; line-height: 1.6;">Your smile lights up my entire universe and makes even the darkest days bright</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); padding: 30px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3em; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));">💝</div>
+                    <div style="font-size: 1.2em; font-weight: 600; line-height: 1.6;">Your heart is pure gold, so kind, so beautiful, and full of endless love</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); padding: 30px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3em; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));">🤗</div>
+                    <div style="font-size: 1.2em; font-weight: 600; line-height: 1.6;">Your hugs feel like coming home, safe, warm, and exactly where I belong</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); padding: 30px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3em; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));">⭐</div>
+                    <div style="font-size: 1.2em; font-weight: 600; line-height: 1.6;">You turn ordinary days into magical moments just by being you</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); padding: 30px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3em; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));">🌈</div>
+                    <div style="font-size: 1.2em; font-weight: 600; line-height: 1.6;">You paint my world with the most vibrant, beautiful colors</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); padding: 30px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3em; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));">♾️</div>
+                    <div style="font-size: 1.2em; font-weight: 600; line-height: 1.6;">My love for you grows infinitely stronger with each passing day</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); padding: 30px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3em; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));">🎵</div>
+                    <div style="font-size: 1.2em; font-weight: 600; line-height: 1.6;">Your laugh is my favorite song, a melody that fills my heart with joy</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); padding: 30px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3em; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));">🌟</div>
+                    <div style="font-size: 1.2em; font-weight: 600; line-height: 1.6;">You believe in me even when I don't believe in myself</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); padding: 30px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
+                    <div style="font-size: 3em; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));">🌺</div>
+                    <div style="font-size: 1.2em; font-weight: 600; line-height: 1.6;">You make me want to be a better person every single day</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Promise -->
+        <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); border-radius: 30px; padding: 60px 50px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.8); animation: slideUp 3.3s ease-out; border: 2px solid rgba(255, 215, 0, 0.3); text-align: center;">
+            <h2 style="font-size: 2.8em; color: #ffd700; margin-bottom: 30px; text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); font-weight: bold;">My Forever Promise To You 💍</h2>
+            <div style="font-size: 100px; margin: 30px 0; filter: drop-shadow(0 0 30px rgba(255, 107, 157, 0.8)); animation: heartbeat 1.5s infinite;">💖</div>
+            <div style="font-size: 1.5em; color: #e0e0e0; line-height: 2; max-width: 800px; margin: 0 auto;">
+                <p style="margin-bottom: 20px;">On this special day, I want to renew my promise to you, my love:</p>
+                <p style="margin-bottom: 20px;">I promise to <span style="color: #ffd700; font-weight: bold; font-size: 1.1em; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);">love you unconditionally</span>, in good times and challenging ones, through every season of life. 💕</p>
+                <p style="margin-bottom: 20px;">I promise to <span style="color: #ffd700; font-weight: bold; font-size: 1.1em; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);">support your dreams</span> as fiercely as my own, to be your biggest cheerleader and your safe place to fall. 🌟</p>
+                <p style="margin-bottom: 20px;">I promise to <span style="color: #ffd700; font-weight: bold; font-size: 1.1em; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);">make you laugh</span> every day, to find joy in the little things, and to never let us forget how to have fun together. 😊</p>
+                <p style="margin-bottom: 20px;">I promise to <span style="color: #ffd700; font-weight: bold; font-size: 1.1em; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);">grow with you</span>, to face life's adventures hand in hand, and to build a beautiful future together. 🌈</p>
+                <p style="margin-bottom: 20px;">Most importantly, I promise to <span style="color: #ffd700; font-weight: bold; font-size: 1.1em; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);">choose you</span>, every single day, for the rest of our lives. 💑♾️</p>
+            </div>
+        </div>
+
+        <div style="text-align: right; font-size: 2.8em; color: #ffd700; margin-top: 50px; margin-bottom: 50px; font-family: 'Brush Script MT', cursive; text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); font-weight: bold; animation: fadeInRight 2s ease-out;">Forever and Always Yours, Asma 💑♾️✨</div>
     </div>
 
     <script>
