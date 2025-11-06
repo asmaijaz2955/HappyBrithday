@@ -59,6 +59,29 @@
             }
         }
 
+        /* Shooting stars */
+        .shooting-star {
+            position: fixed;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 2px white;
+            animation: shootingStar 3s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes shootingStar {
+            0% {
+                transform: translateX(0) translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-300px) translateY(300px);
+                opacity: 0;
+            }
+        }
+
         /* Stars background */
         .stars {
             position: fixed;
@@ -756,6 +779,141 @@
             to { transform: rotate(360deg); }
         }
 
+
+
+        /* Love Letter with Typewriter Effect */
+        .love-letter-section {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            border-radius: 30px;
+            padding: 60px 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .typewriter-text {
+            font-size: 1.5em;
+            color: #ffd700;
+            line-height: 2;
+            text-align: center;
+            min-height: 100px;
+            font-family: 'Courier New', monospace;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+        }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1.2em;
+            background: #ffd700;
+            margin-left: 5px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Interactive Wish Bubbles */
+        .wish-bubbles-container {
+            background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%);
+            border-radius: 30px;
+            padding: 60px 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            text-align: center;
+            position: relative;
+            min-height: 500px;
+        }
+
+        .wish-bubble {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 107, 157, 0.2) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: 3px solid rgba(255, 215, 0, 0.4);
+            backdrop-filter: blur(10px);
+        }
+
+        .wish-bubble:hover {
+            transform: scale(1.3);
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.5) 0%, rgba(255, 107, 157, 0.5) 100%);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
+        }
+
+        .wish-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%);
+            padding: 50px;
+            border-radius: 30px;
+            border: 3px solid #ffd700;
+            box-shadow: 0 0 100px rgba(255, 215, 0, 0.8);
+            z-index: 1001;
+            max-width: 600px;
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .wish-popup.active {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .wish-popup-text {
+            font-size: 1.8em;
+            color: #ffd700;
+            text-align: center;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+        }
+
+        .close-popup {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.3em;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .close-popup:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.8);
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
         /* Cake Section with Blowing Effect */
         .cake-section {
             background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%);
@@ -994,16 +1152,124 @@
         .wish-message {
             text-align: center;
             margin-top: 35px;
-            font-size: 1.9em;
-            color: #ffd700;
             display: none;
             animation: fadeIn 1.2s;
-            text-shadow: 0 0 25px rgba(255, 215, 0, 0.9);
-            font-weight: bold;
         }
 
-        /* Continue with rest of styles... (keeping them as they were) */
-        
+        .special-message-container {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.2) 0%, rgba(255, 215, 0, 0.2) 100%);
+            border: 3px solid #ffd700;
+            border-radius: 25px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
+        }
+
+        .special-message-title {
+            font-size: 2.5em;
+            color: #ffd700;
+            text-shadow: 0 0 25px rgba(255, 215, 0, 0.9);
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: titleGlow 2s infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% {
+                text-shadow: 0 0 25px rgba(255, 215, 0, 0.9);
+                transform: scale(1);
+            }
+            50% {
+                text-shadow: 0 0 40px rgba(255, 107, 157, 1);
+                transform: scale(1.05);
+            }
+        }
+
+        .special-message-text {
+            font-size: 1.5em;
+            color: #fff;
+            line-height: 1.8;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+            margin: 15px 0;
+        }
+
+        .message-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-message-heart {
+            position: absolute;
+            font-size: 30px;
+            animation: floatUp 4s ease-in infinite;
+            opacity: 0;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-400px) rotate(360deg) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .sparkle-effect {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: #ffd700;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ffd700;
+            animation: sparkleAnimation 2s ease-in-out infinite;
+        }
+
+        @keyframes sparkleAnimation {
+            0%, 100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .love-burst {
+            position: absolute;
+            font-size: 50px;
+            animation: burstOut 3s ease-out infinite;
+            opacity: 0;
+        }
+
+        @keyframes burstOut {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2) rotate(180deg);
+                opacity: 0;
+            }
+        }
+
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -1065,45 +1331,8 @@
                 height: 320px;
             }
 
-            .envelope-flourish {
-                font-size: 32px;
-            }
-
-            .envelope-stamp {
-                width: 65px;
-                height: 65px;
-                font-size: 26px;
-                top: 20px;
-                right: 25px;
-            }
-
-            .stamp-text {
-                font-size: 7px;
-            }
-
-            .envelope-address {
-                left: 30px;
-                padding: 14px 18px;
-            }
-
-            .address-name {
-                font-size: 1.6em;
-            }
-
-            .envelope-seal {
-                width: 90px;
-                height: 90px;
-                font-size: 42px;
-            }
-
-            .envelope-quote {
-                font-size: 0.85em;
-                bottom: 28px;
-            }
-
-            .click-hint {
-                font-size: 1.2em;
-                bottom: -75px;
+            .birthday-title {
+                font-size: 2.5em;
             }
 
             .cake {
@@ -1111,16 +1340,14 @@
             }
 
             .cake-button {
-                padding: 22px 50px;
-                font-size: 1.4em;
+                padding: 20px 40px;
+                font-size: 1.3em;
             }
 
-            .birthday-title {
-                font-size: 2.8em;
-            }
-
-            .birthday-header {
-                padding: 0 10px;
+            .wish-bubble {
+                width: 90px;
+                height: 90px;
+                font-size: 2em;
             }
         }
     </style>
@@ -1128,6 +1355,9 @@
 <body>
     <!-- Stars background -->
     <div class="stars" id="starsContainer"></div>
+
+    <!-- Shooting stars -->
+    <div id="shootingStarsContainer"></div>
 
     <!-- Floating celebration particles -->
     <div class="celebration-container" id="celebrationContainer"></div>
@@ -1210,7 +1440,34 @@
             <div class="birthday-emoji">🎊</div>
         </div>
 
-        <!-- Cake Section with Realistic Blowing -->
+        <!-- Typewriter Love Letter -->
+        <div class="love-letter-section">
+            <h2 class="cake-title">A Special Message For You... 💌</h2>
+            <div class="typewriter-text" id="typewriterText">
+                <span class="typing-cursor"></span>
+            </div>
+        </div>
+
+        <!-- Interactive Wish Bubbles -->
+        <div class="wish-bubbles-container">
+            <h2 class="cake-title">Pop the Bubbles to Reveal My Wishes! 🎈✨</h2>
+            <p style="color: #ffd700; font-size: 1.3em; margin-bottom: 40px;">Click each bubble to discover a special wish!</p>
+            <div class="wish-bubble" style="top: 20%; left: 15%;" onclick="showWish(0)">🌟</div>
+            <div class="wish-bubble" style="top: 25%; right: 15%;" onclick="showWish(1)">💖</div>
+            <div class="wish-bubble" style="top: 50%; left: 10%;" onclick="showWish(2)">🎯</div>
+            <div class="wish-bubble" style="top: 50%; right: 10%;" onclick="showWish(3)">✨</div>
+            <div class="wish-bubble" style="bottom: 15%; left: 25%;" onclick="showWish(4)">🚀</div>
+            <div class="wish-bubble" style="bottom: 15%; right: 25%;" onclick="showWish(5)">💝</div>
+        </div>
+
+        <!-- Wish Popup -->
+        <div class="popup-overlay" id="popupOverlay" onclick="closeWish()"></div>
+        <div class="wish-popup" id="wishPopup">
+            <div class="wish-popup-text" id="wishPopupText"></div>
+            <button class="close-popup" onclick="closeWish()">Close 💕</button>
+        </div>
+
+        <!-- Cake Section with Blowing Effect -->
         <div class="cake-section">
             <div class="cake-section-content">
                 <h2 class="cake-title">Make A Wish, My Darling! ✨</h2>
@@ -1239,7 +1496,28 @@
                     </button>
                 </div>
                 <div class="wish-message" id="wishMessage">
-                    ✨ All Your Dreams Will Come True, My Love! 🌟
+                    <div class="special-message-container">
+                        <div class="message-hearts" id="messageHearts"></div>
+                        <div class="special-message-title">✨ My Dearest Ali, My Forever Love ✨</div>
+                        <div class="special-message-text">
+                            🎂 Happy Birthday to the man who makes my heart skip a beat every single day! 💖
+                        </div>
+                        <div class="special-message-text">
+                            You are not just my husband, you are my best friend, my soulmate, my everything! 👨‍❤️‍💋‍👩
+                        </div>
+                        <div class="special-message-text">
+                            Every moment with you is a treasure, every smile you give me is a gift, and every day by your side is a blessing! 🌟
+                        </div>
+                        <div class="special-message-text">
+                            May all your wishes come true, may success follow you everywhere, and may our love continue to grow stronger with each passing year! 🚀✨
+                        </div>
+                        <div class="special-message-text">
+                            I promise to love you more today than yesterday, and even more tomorrow! 💍♾️
+                        </div>
+                        <div class="special-message-title" style="font-size: 2em; margin-top: 30px;">
+                            Forever Yours, Asma 💑💕✨
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1255,189 +1533,115 @@
                 
                 <div style="font-size: 1.4em; line-height: 2; color: #e0e0e0; text-align: center; margin: 30px 0;">
                     <p style="margin-bottom: 25px;">My Dearest Ali, My Soulmate, My Love 💑</p>
-                    <p style="margin-bottom: 25px;">On this magical day, I celebrate not just your birthday, but the incredible <span style="color: #ffd700; font-weight: bold; font-size: 1.1em; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);">blessing</span> of having you in my life! 🎊 From the moment we met, you've filled every day with endless love, joy, laughter, and the kind of happiness I never knew existed.</p>
-                    <p style="margin-bottom: 25px;">Happy Birthday to my <span style="color: #ffd700; font-weight: bold; font-size: 1.1em; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);">soulmate</span> 💖, my best friend 🤗, my rock 💪, my partner in everything 🤝, and the one who makes my heart skip a beat every single day! 👫</p>
-                    <p style="margin-bottom: 25px;">Every moment with you is a precious gift. Whether we're laughing together, supporting each other through challenges, or just enjoying quiet moments, you make everything better. Your <span style="color: #ffd700; font-weight: bold; font-size: 1.1em; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);">kindness, strength, and beautiful soul</span> inspire me every single day! 🌟</p>
+                    <p style="margin-bottom: 25px;">On this magical day, I celebrate not just your birthday, but the incredible <span style="color: #ffd700; font-weight: bold; font-size: 1.1em; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);">blessing</span> of having you in my life! 🎊</p>
+                    <p style="margin-bottom: 25px;">Every moment with you is a precious gift. Your <span style="color: #ffd700; font-weight: bold; font-size: 1.1em; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);">kindness, strength, and beautiful soul</span> inspire me every single day! 🌟</p>
                     <p style="margin-bottom: 25px;">I love you more than the stars in the sky, deeper than the ocean, and stronger with each passing day! Today, tomorrow, and forever! 💫🌙✨</p>
                 </div>
             </div>
         </div>
 
-        <!-- Our Journey Timeline -->
-        <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); border-radius: 30px; padding: 60px 50px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.8); animation: slideUp 2.1s ease-out; border: 2px solid rgba(255, 215, 0, 0.3);">
-            <h2 style="text-align: center; font-size: 2.8em; color: #ffd700; margin-bottom: 50px; text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); font-weight: bold;">Our Beautiful Journey Together 💕</h2>
-            <div style="position: relative; padding: 30px 0;">
-                <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #ffd700 0%, #ff6b9d 50%, #a29bfe 100%); transform: translateX(-50%); box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);"></div>
-                
-                <div style="position: relative; margin-bottom: 60px;">
-                    <div style="position: absolute; left: 50%; top: 0; width: 30px; height: 30px; background: linear-gradient(135deg, #ffd700 0%, #ff6b9d 100%); border-radius: 50%; transform: translateX(-50%); border: 4px solid #1a1a2e; box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); z-index: 2;"></div>
-                    <div style="width: 45%; background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.3);">
-                        <div style="font-size: 2.5em; margin-bottom: 10px;">💘</div>
-                        <div style="font-size: 1.1em; color: #ffd700; font-weight: bold; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">The Beginning</div>
-                        <div style="font-size: 1.2em; color: #e0e0e0; line-height: 1.6;">When our eyes first met and my heart knew you were the one. That magical moment when two souls recognized each other across time and space. 💫</div>
-                    </div>
-                </div>
-
-                <div style="position: relative; margin-bottom: 60px;">
-                    <div style="position: absolute; left: 50%; top: 0; width: 30px; height: 30px; background: linear-gradient(135deg, #ffd700 0%, #ff6b9d 100%); border-radius: 50%; transform: translateX(-50%); border: 4px solid #1a1a2e; box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); z-index: 2;"></div>
-                    <div style="margin-left: 55%; width: 45%; background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.3);">
-                        <div style="font-size: 2.5em; margin-bottom: 10px;">💑</div>
-                        <div style="font-size: 1.1em; color: #ffd700; font-weight: bold; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">Our First Date</div>
-                        <div style="font-size: 1.2em; color: #e0e0e0; line-height: 1.6;">Nervous butterflies, endless conversations, and realizing I never wanted that day to end. You made me laugh, feel comfortable, and showed me what true connection feels like. 🌹</div>
-                    </div>
-                </div>
-
-                <div style="position: relative; margin-bottom: 60px;">
-                    <div style="position: absolute; left: 50%; top: 0; width: 30px; height: 30px; background: linear-gradient(135deg, #ffd700 0%, #ff6b9d 100%); border-radius: 50%; transform: translateX(-50%); border: 4px solid #1a1a2e; box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); z-index: 2;"></div>
-                    <div style="width: 45%; background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.3);">
-                        <div style="font-size: 2.5em; margin-bottom: 10px;">💍</div>
-                        <div style="font-size: 1.1em; color: #ffd700; font-weight: bold; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">You Proposed</div>
-                        <div style="font-size: 1.2em; color: #e0e0e0; line-height: 1.6;">The happiest "YES!" of my life! When you got down on one knee, time stood still. My dreams were coming true, and I knew forever with you would be the greatest adventure. ✨</div>
-                    </div>
-                </div>
-
-                <div style="position: relative; margin-bottom: 60px;">
-                    <div style="position: absolute; left: 50%; top: 0; width: 30px; height: 30px; background: linear-gradient(135deg, #ffd700 0%, #ff6b9d 100%); border-radius: 50%; transform: translateX(-50%); border: 4px solid #1a1a2e; box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); z-index: 2;"></div>
-                    <div style="margin-left: 55%; width: 45%; background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.3);">
-                        <div style="font-size: 2.5em; margin-bottom: 10px;">👰‍♀️🤵‍♂️</div>
-                        <div style="font-size: 1.1em; color: #ffd700; font-weight: bold; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">Our Wedding Day</div>
-                        <div style="font-size: 1.2em; color: #e0e0e0; line-height: 1.6;">The most beautiful day of my life! Surrounded by love, we vowed to be together forever. Every promise we made that day, I cherish and honor with all my heart. 💒</div>
-                    </div>
-                </div>
-
-                <div style="position: relative;">
-                    <div style="position: absolute; left: 50%; top: 0; width: 30px; height: 30px; background: linear-gradient(135deg, #ffd700 0%, #ff6b9d 100%); border-radius: 50%; transform: translateX(-50%); border: 4px solid #1a1a2e; box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); z-index: 2;"></div>
-                    <div style="width: 45%; background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.3);">
-                        <div style="font-size: 2.5em; margin-bottom: 10px;">♾️</div>
-                        <div style="font-size: 1.1em; color: #ffd700; font-weight: bold; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">Every Day Since</div>
-                        <div style="font-size: 1.2em; color: #e0e0e0; line-height: 1.6;">Each day with you is a new chapter in our love story. Through ups and downs, laughter and tears, we grow stronger together. Here's to a lifetime of love, adventures, and happiness! 🌈</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Special Memories -->
-        <div style="background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); border-radius: 30px; padding: 60px 50px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.8); animation: slideUp 2.4s ease-out; border: 2px solid rgba(255, 215, 0, 0.3);">
-            <h2 style="text-align: center; font-size: 2.8em; color: #ffd700; margin-bottom: 40px; text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); font-weight: bold;">Our Precious Memories 📸✨</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 40px 30px; border-radius: 20px; text-align: center; border: 2px solid rgba(255, 215, 0, 0.2); transition: all 0.4s;">
-                    <div style="font-size: 4em; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));">🌙</div>
-                    <div style="font-size: 1.6em; color: #ffd700; font-weight: bold; margin-bottom: 15px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">Late Night Talks</div>
-                    <div style="font-size: 1.2em; color: #e0e0e0; line-height: 1.7;">Those endless conversations under the stars, where we share our dreams, fears, and everything in between. Your voice is my favorite sound in the world. 💭</div>
-                </div>
-                
-                <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 40px 30px; border-radius: 20px; text-align: center; border: 2px solid rgba(255, 215, 0, 0.2);">
-                    <div style="font-size: 4em; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));">🍽️</div>
-                    <div style="font-size: 1.6em; color: #ffd700; font-weight: bold; margin-bottom: 15px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">Cooking Together</div>
-                    <div style="font-size: 1.2em; color: #e0e0e0; line-height: 1.7;">The kitchen chaos, flour fights, and burnt attempts that always end in laughter. Every meal we cook together tastes like love! 👨‍🍳👩‍🍳</div>
-                </div>
-                
-                <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 40px 30px; border-radius: 20px; text-align: center; border: 2px solid rgba(255, 215, 0, 0.2);">
-                    <div style="font-size: 4em; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));">🎬</div>
-                    <div style="font-size: 1.6em; color: #ffd700; font-weight: bold; margin-bottom: 15px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">Movie Nights</div>
-                    <div style="font-size: 1.2em; color: #e0e0e0; line-height: 1.7;">Cuddled on the couch, watching movies (or sometimes falling asleep), these cozy moments are my favorite. Your arms are my home. 🛋️</div>
-                </div>
-                
-                <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); padding: 40px 30px; border-radius: 20px; text-align: center; border: 2px solid rgba(255, 215, 0, 0.2);">
-                    <div style="font-size: 4em; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));">✈️</div>
-                    <div style="font-size: 1.6em; color: #ffd700; font-weight: bold; margin-bottom: 15px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">Adventures Together</div>
-                    <div style="font-size: 1.2em; color: #e0e0e0; line-height: 1.7;">Every trip, every new place we explore becomes special because I'm with you. The world is more beautiful when I see it through your eyes. 🗺️</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Birthday Wishes -->
-        <div style="background: linear-gradient(135deg, #0f3460 0%, #16213e 100%); border-radius: 30px; padding: 60px 50px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.8); animation: slideUp 2.7s ease-out; border: 2px solid rgba(255, 215, 0, 0.3);">
-            <h2 style="text-align: center; font-size: 2.8em; color: #ffd700; margin-bottom: 40px; text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); font-weight: bold;">My Heartfelt Birthday Wishes For You! 🎁💕</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div style="background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 35px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.2);">
-                    <div style="font-size: 3.5em; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));">🌟</div>
-                    <div style="font-size: 1.3em; color: #e0e0e0; font-weight: 600; line-height: 1.7;">May all your dreams and aspirations shine bright and come true this year! Every goal you chase, may you achieve with flying colors!</div>
-                </div>
-                <div style="background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 35px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.2);">
-                    <div style="font-size: 3.5em; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));">💪</div>
-                    <div style="font-size: 1.3em; color: #e0e0e0; font-weight: 600; line-height: 1.7;">Wishing you incredible strength, perfect health, and boundless energy for all your adventures and challenges ahead!</div>
-                </div>
-                <div style="background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 35px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.2);">
-                    <div style="font-size: 3.5em; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));">🎯</div>
-                    <div style="font-size: 1.3em; color: #e0e0e0; font-weight: 600; line-height: 1.7;">May you conquer every goal, reach new heights of success, and exceed even your wildest expectations this year!</div>
-                </div>
-                <div style="background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 35px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.2);">
-                    <div style="font-size: 3.5em; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));">😊</div>
-                    <div style="font-size: 1.3em; color: #e0e0e0; font-weight: 600; line-height: 1.7;">Here's to 365 days filled with endless smiles, contagious laughter, pure joy, and moments that take your breath away!</div>
-                </div>
-                <div style="background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 35px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.2);">
-                    <div style="font-size: 3.5em; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));">🚀</div>
-                    <div style="font-size: 1.3em; color: #e0e0e0; font-weight: 600; line-height: 1.7;">May success and prosperity follow you in every step you take! May opportunities knock on your door and blessings flow abundantly!</div>
-                </div>
-                <div style="background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); padding: 35px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255, 215, 0, 0.2);">
-                    <div style="font-size: 3.5em; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));">❤️</div>
-                    <div style="font-size: 1.3em; color: #e0e0e0; font-weight: 600; line-height: 1.7;">Wishing you a year overflowing with love, inner peace, countless blessings, and everything your beautiful heart desires!</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Why I Love You -->
-        <div style="background: linear-gradient(135deg, #2d2d44 0%, #1f1f3a 100%); border-radius: 30px; padding: 60px 50px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.8); animation: slideUp 3s ease-out; border: 2px solid rgba(255, 215, 0, 0.3);">
-            <h2 style="text-align: center; font-size: 2.8em; color: #ffd700; margin-bottom: 40px; text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); font-weight: bold;">Why You're My Everything! 💖</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
-                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); padding: 30px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
-                    <div style="font-size: 3em; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));">😍</div>
-                    <div style="font-size: 1.2em; font-weight: 600; line-height: 1.6;">Your smile lights up my entire universe and makes even the darkest days bright</div>
-                </div>
-                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); padding: 30px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
-                    <div style="font-size: 3em; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));">💝</div>
-                    <div style="font-size: 1.2em; font-weight: 600; line-height: 1.6;">Your heart is pure gold, so kind, so beautiful, and full of endless love</div>
-                </div>
-                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); padding: 30px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
-                    <div style="font-size: 3em; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));">🤗</div>
-                    <div style="font-size: 1.2em; font-weight: 600; line-height: 1.6;">Your hugs feel like coming home, safe, warm, and exactly where I belong</div>
-                </div>
-                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); padding: 30px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
-                    <div style="font-size: 3em; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));">⭐</div>
-                    <div style="font-size: 1.2em; font-weight: 600; line-height: 1.6;">You turn ordinary days into magical moments just by being you</div>
-                </div>
-                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); padding: 30px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
-                    <div style="font-size: 3em; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));">🌈</div>
-                    <div style="font-size: 1.2em; font-weight: 600; line-height: 1.6;">You paint my world with the most vibrant, beautiful colors</div>
-                </div>
-                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); padding: 30px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
-                    <div style="font-size: 3em; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));">♾️</div>
-                    <div style="font-size: 1.2em; font-weight: 600; line-height: 1.6;">My love for you grows infinitely stronger with each passing day</div>
-                </div>
-                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); padding: 30px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
-                    <div style="font-size: 3em; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));">🎵</div>
-                    <div style="font-size: 1.2em; font-weight: 600; line-height: 1.6;">Your laugh is my favorite song, a melody that fills my heart with joy</div>
-                </div>
-                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); padding: 30px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
-                    <div style="font-size: 3em; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));">🌟</div>
-                    <div style="font-size: 1.2em; font-weight: 600; line-height: 1.6;">You believe in me even when I don't believe in myself</div>
-                </div>
-                <div style="background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); padding: 30px; border-radius: 20px; text-align: center; color: white; box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3); border: 2px solid rgba(255, 255, 255, 0.2);">
-                    <div style="font-size: 3em; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));">🌺</div>
-                    <div style="font-size: 1.2em; font-weight: 600; line-height: 1.6;">You make me want to be a better person every single day</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- My Promise -->
-        <div style="background: linear-gradient(135deg, #16213e 0%, #0f3460 100%); border-radius: 30px; padding: 60px 50px; margin-bottom: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.8); animation: slideUp 3.3s ease-out; border: 2px solid rgba(255, 215, 0, 0.3); text-align: center;">
-            <h2 style="font-size: 2.8em; color: #ffd700; margin-bottom: 30px; text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); font-weight: bold;">My Forever Promise To You 💍</h2>
-            <div style="font-size: 100px; margin: 30px 0; filter: drop-shadow(0 0 30px rgba(255, 107, 157, 0.8)); animation: heartbeat 1.5s infinite;">💖</div>
-            <div style="font-size: 1.5em; color: #e0e0e0; line-height: 2; max-width: 800px; margin: 0 auto;">
-                <p style="margin-bottom: 20px;">On this special day, I want to renew my promise to you, my love:</p>
-                <p style="margin-bottom: 20px;">I promise to <span style="color: #ffd700; font-weight: bold; font-size: 1.1em; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);">love you unconditionally</span>, in good times and challenging ones, through every season of life. 💕</p>
-                <p style="margin-bottom: 20px;">I promise to <span style="color: #ffd700; font-weight: bold; font-size: 1.1em; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);">support your dreams</span> as fiercely as my own, to be your biggest cheerleader and your safe place to fall. 🌟</p>
-                <p style="margin-bottom: 20px;">I promise to <span style="color: #ffd700; font-weight: bold; font-size: 1.1em; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);">make you laugh</span> every day, to find joy in the little things, and to never let us forget how to have fun together. 😊</p>
-                <p style="margin-bottom: 20px;">I promise to <span style="color: #ffd700; font-weight: bold; font-size: 1.1em; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);">grow with you</span>, to face life's adventures hand in hand, and to build a beautiful future together. 🌈</p>
-                <p style="margin-bottom: 20px;">Most importantly, I promise to <span style="color: #ffd700; font-weight: bold; font-size: 1.1em; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);">choose you</span>, every single day, for the rest of our lives. 💑♾️</p>
-            </div>
-        </div>
-
-        <div style="text-align: right; font-size: 2.8em; color: #ffd700; margin-top: 50px; margin-bottom: 50px; font-family: 'Brush Script MT', cursive; text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); font-weight: bold; animation: fadeInRight 2s ease-out;">Forever and Always Yours, Asma 💑♾️✨</div>
+        <div style="text-align: right; font-size: 2.8em; color: #ffd700; margin-top: 50px; margin-bottom: 50px; font-family: 'Brush Script MT', cursive; text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); font-weight: bold; animation: fadeInRight 2s ease-out;">Forever Yours, Asma 💑♾️✨</div>
     </div>
 
     <script>
+        // Wishes array
+        const wishes = [
+            "May all your dreams shine bright and come true this year! Every goal you chase, may you achieve with flying colors! 🌟",
+            "Wishing you endless love, happiness, and magical moments that make your heart sing! May our love grow stronger every day! 💖",
+            "May you conquer every goal and reach new heights of success! I believe in you with all my heart! 🎯",
+            "Here's to a year filled with endless smiles, contagious laughter, and pure joy in every moment! ✨",
+            "May success and prosperity follow you in every step! May opportunities flow abundantly your way! 🚀",
+            "Wishing you perfect health, boundless energy, and a heart full of peace and contentment! 💝"
+        ];
+
+        // Typewriter messages
+        const typewriterMessages = [
+            "My love, you make every day magical...",
+            "Your smile is my favorite sight in the world...",
+            "Together, we can conquer anything...",
+            "You are my greatest adventure..."
+        ];
+
+        let currentMessageIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+
+        // Typewriter effect
+        function typeWriter() {
+            const textElement = document.getElementById('typewriterText');
+            const currentMessage = typewriterMessages[currentMessageIndex];
+            
+            if (!isDeleting && currentCharIndex < currentMessage.length) {
+                textElement.innerHTML = currentMessage.substring(0, currentCharIndex + 1) + '<span class="typing-cursor"></span>';
+                currentCharIndex++;
+                setTimeout(typeWriter, 100);
+            } else if (isDeleting && currentCharIndex > 0) {
+                textElement.innerHTML = currentMessage.substring(0, currentCharIndex - 1) + '<span class="typing-cursor"></span>';
+                currentCharIndex--;
+                setTimeout(typeWriter, 50);
+            } else if (!isDeleting && currentCharIndex === currentMessage.length) {
+                setTimeout(() => {
+                    isDeleting = true;
+                    typeWriter();
+                }, 2000);
+            } else if (isDeleting && currentCharIndex === 0) {
+                isDeleting = false;
+                currentMessageIndex = (currentMessageIndex + 1) % typewriterMessages.length;
+                setTimeout(typeWriter, 500);
+            }
+        }
+
+        // Show wish popup
+        function showWish(index) {
+            const popup = document.getElementById('wishPopup');
+            const overlay = document.getElementById('popupOverlay');
+            const wishText = document.getElementById('wishPopupText');
+            
+            wishText.textContent = wishes[index];
+            popup.classList.add('active');
+            overlay.classList.add('active');
+            
+            // Create celebration
+            createPopupCelebration();
+        }
+
+        // Close wish popup
+        function closeWish() {
+            const popup = document.getElementById('wishPopup');
+            const overlay = document.getElementById('popupOverlay');
+            
+            popup.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+
+        // Create popup celebration
+        function createPopupCelebration() {
+            const emojis = ['💖', '💕', '✨', '⭐', '🌟', '💫'];
+            for(let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.style.position = 'fixed';
+                    confetti.style.left = Math.random() * window.innerWidth + 'px';
+                    confetti.style.top = '-50px';
+                    confetti.style.fontSize = (Math.random() * 25 + 20) + 'px';
+                    confetti.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+                    confetti.style.zIndex = '10000';
+                    confetti.style.pointerEvents = 'none';
+                    document.body.appendChild(confetti);
+
+                    confetti.animate([
+                        { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                        { transform: `translateY(${window.innerHeight + 100}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                    ], {
+                        duration: (Math.random() * 2 + 2) * 1000,
+                        easing: 'linear'
+                    });
+
+                    setTimeout(() => confetti.remove(), 4000);
+                }, i * 50);
+            }
+        }
+
         // Create stars
         function createStars() {
             const starsContainer = document.getElementById('starsContainer');
@@ -1449,6 +1653,22 @@
                 star.style.animationDelay = Math.random() * 3 + 's';
                 starsContainer.appendChild(star);
             }
+        }
+
+        // Create shooting stars
+        function createShootingStars() {
+            const container = document.getElementById('shootingStarsContainer');
+            setInterval(() => {
+                const star = document.createElement('div');
+                star.className = 'shooting-star';
+                star.style.top = Math.random() * 50 + '%';
+                star.style.right = '0px';
+                star.style.animationDelay = '0s';
+                star.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                container.appendChild(star);
+
+                setTimeout(() => star.remove(), 3000);
+            }, 3000);
         }
 
         // Create particles
@@ -1476,6 +1696,7 @@
         }
 
         createStars();
+        createShootingStars();
 
         // Envelope opening with seal break effect
         const envelopeContainer = document.getElementById('envelopeContainer');
@@ -1494,6 +1715,7 @@
                 setTimeout(() => {
                     mainContent.classList.add('visible');
                     startCelebration();
+                    typeWriter(); // Start typewriter effect
                 }, 600);
             }, 3000);
         });
@@ -1591,13 +1813,8 @@
             // Blow out each candle with delay
             candleElements.forEach((candle, index) => {
                 setTimeout(() => {
-                    // Add blown class
                     candle.classList.add('blown');
-                    
-                    // Create smoke effect
                     createSmoke(candle);
-                    
-                    // Sound effect (visual representation)
                     createSoundWave(candle);
                 }, index * 200);
             });
@@ -1729,6 +1946,59 @@
                     setTimeout(() => confetti.remove(), duration * 1000);
                 }, i * 20);
             }
+
+            // Start the special message animations
+            setTimeout(() => {
+                startMessageAnimations();
+            }, 1500);
+        }
+
+        // Animate the special message with floating hearts and sparkles
+        function startMessageAnimations() {
+            const messageHeartsContainer = document.getElementById('messageHearts');
+            
+            // Create floating hearts continuously
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'floating-message-heart';
+                const heartEmojis = ['💖', '💕', '💗', '💝', '💘', '❤️', '💓', '💞'];
+                heart.innerHTML = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.bottom = '-50px';
+                heart.style.animationDelay = '0s';
+                heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                messageHeartsContainer.appendChild(heart);
+
+                setTimeout(() => heart.remove(), 5000);
+            }, 400);
+
+            // Create sparkles around the message
+            setInterval(() => {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle-effect';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = '0s';
+                sparkle.style.animationDuration = (Math.random() * 1 + 1.5) + 's';
+                messageHeartsContainer.appendChild(sparkle);
+
+                setTimeout(() => sparkle.remove(), 2500);
+            }, 200);
+
+            // Create love bursts
+            setInterval(() => {
+                const burst = document.createElement('div');
+                burst.className = 'love-burst';
+                const burstEmojis = ['💥', '✨', '⭐', '🌟', '💫'];
+                burst.innerHTML = burstEmojis[Math.floor(Math.random() * burstEmojis.length)];
+                burst.style.left = Math.random() * 100 + '%';
+                burst.style.top = Math.random() * 100 + '%';
+                burst.style.animationDelay = '0s';
+                burst.style.animationDuration = (Math.random() * 1 + 2) + 's';
+                messageHeartsContainer.appendChild(burst);
+
+                setTimeout(() => burst.remove(), 3500);
+            }, 800);
         }
     </script>
 </body>
